@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+  body {
+      overflow-x: hidden;
+  }
+
+  /* Base fade-in animation */
+  @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+  .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+  }
+
+  /* Fade-in from bottom animation */
+  @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up {
+      animation: fadeInUp 0.9s ease-out forwards;
+  }
+
+
+  .animate-fade-in-up-section {
+      animation: fadeInUp 1s ease-out forwards;
+      opacity: 0; /* Start hidden */
+      transform: translateY(30px);
+  }
+  /* Apply delay for sections */
+  #skills.animate-fade-in-up-section { animation-delay: 0.5s; }
+  #experience.animate-fade-in-up-section { animation-delay: 0.6s; } 
+  #projects.animate-fade-in-up-section { animation-delay: 0.7s; }
+  #contact.animate-fade-in-up-section { animation-delay: 0.9s; }
+
+
+  .animate-fade-in-up-stagger {
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0; /* Start hidden */
+      transform: translateY(20px);
+  }
+
+
+  @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
+  }
+  .animate-slide-in-left {
+      animation: slideInLeft 0.9s ease-out forwards;
+  }
+
+
+  @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(60px); }
+      to { opacity: 1; transform: translateX(0); }
+  }
+  .animate-fade-in-right {
+      animation: fadeInRight 0.9s ease-out forwards;
+  }
+
+
+  @keyframes bounceOnce {
+      0%, 100% {
+          transform: translateY(0);
+      }
+      20% {
+          transform: translateY(-10px);
+      }
+      40% {
+          transform: translateY(0);
+      }
+      60% {
+          transform: translateY(-5px);
+      }
+      80% {
+          transform: translateY(0);
+      }
+  }
+  .animate-bounce-once {
+      animation: bounceOnce 1.2s ease-in-out;
+  }
+
+
+  .hover\\:animate-pulse:hover {
+      animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+      0%, 100% {
+          transform: scale(1);
+      }
+      50% {
+          transform: scale(1.02);
+      }
+  }
+
+
+  @keyframes glow-pulse-base {
+      0% { box-shadow: 0 0 5px var(--glow-color-base); opacity: 0.8; }
+      50% { box-shadow: 0 0 20px var(--glow-color-base), 0 0 30px var(--glow-color-base); opacity: 1; }
+      100% { box-shadow: 0 0 5px var(--glow-color-base); opacity: 0.8; }
+  }
+
+  .animate-glow-pulse-lime {
+      --glow-color-base: #a7f3d0; /* lime-200 */
+      animation: glow-pulse-base 2s infinite ease-in-out;
+  }
+
+  .animate-glow-pulse-purple{
+    --glow-color-base: #ea88e0; /* lime-200 */
+    animation: glow-pulse-base 2s infinite ease-in-out;
+  }
+
+  /* Navbar slide-in-down animation */
+  @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-down {
+      animation: fadeInDown 1s ease-out forwards;
+  }
+
+  /* --- 3D Hover Animations for Cards --- */
+  .card-3d-hover {
+      perspective: 1500px; /* Define perspective directly on the card for isolated 3D effect */
+      transform-style: preserve-3d; /* Crucial for child elements to be in 3D space */
+      transition: transform 0.4s ease-out, box-shadow 0.3s ease-out; /* Smooth transition */
+      will-change: transform, box-shadow; /* Performance hint */
+  }
+  .card-3d-hover:hover {
+      transform: rotateY(15deg) rotateX(7deg) translateZ(60px) scale(1.08);
+      box-shadow: 0 15px 30px rgba(167, 243, 208, 0.4), 0 25px 50px rgba(167, 243, 208, 0.2); /* Deeper, glowing shadow */
+  }
+
+
+  .perspective-1000 {
+      perspective: 1000px;
+  }
+
+  .group:hover .card-icon-animate {
+      transform: rotateY(180deg) scale(1.2); /* Rotate and scale icon */
+  }
+  .card-icon-animate {
+      transition: transform 0.4s ease-out; 
+      will-change: transform; 
+  }
+
+  
+  .group:hover .project-image-animate {
+      transform: scale(1.1) rotateZ(3deg); 
+  }
+  .project-image-animate {
+      transition: transform 0.4s ease-out; 
+      will-change: transform; 
+  }
+
+  
+  .nav:hover { 
+      box-shadow: 0 0 25px rgba(167, 243, 208, 0.6), 0 0 50px rgba(167, 243, 208, 0.4); 
+      animation-name:sectionGlow ;
+  }
+
+
+  @keyframes sectionGlow {
+      0% { box-shadow: 0 0 10px rgba(167, 243, 208, 0.3); }
+      50% { box-shadow: 0 0 20px rgba(167, 243, 208, 0.6); }
+      100% { box-shadow: 0 0 10px rgba(167, 243, 208, 0.3); }
+  }
+  .section-glow {
+      animation: sectionGlow 4s infinite ease-in-out alternate;
+  }
+
+
+  .three-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0; /* Behind other content */
+  }
+      .three-canvas canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important; /* !important to override potential inline styles */
+      height: 100% !important; /* !important to override potential inline styles */
+      display: block; /* Remove extra space below canvas */
+  }
