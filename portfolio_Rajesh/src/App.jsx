@@ -498,7 +498,7 @@ function App() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-lime-400 mb-16 animate-fade-in">
             Key Projects & Accomplishments 💼
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 perspective-1000">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 perspective-1000">
             {resumeData.projects.map((project, index) => (
               <ProjectCard
                 key={index}
