@@ -31,7 +31,7 @@ const resumeData = {
   name: "Rajesh Kumar Pathak",
   shortName: "Rajesh Kumar", // Changed to a shorter name for nav bar
   summary:
-    "I'm a Full Stack developer with nearly 3 years of experience specializing in developing responsive and visually appealing web applications using ReactJS ⚛️, Redux, JavaScript, and related technologies.", // Updated summary with emoji
+    " I'm a Full Stack Engineer skilled in ReactJS, Node.js, Spring Boot, MySQL and related technologies, with a strong focus on performance and clean code. I've led e-commerce projects deployed on AWS, implemented real-time data tracking, and optimized web speed using code splitting and lazy loading.", 
   phone: "+91 7870012723",
   email: "rajeshkumar9852143626@gmail.com",
   linkedin: "www.linkedin.com/in/rajesh-kumar-pathak",
@@ -419,7 +419,7 @@ function App() {
             <span className="text-lime-300">{resumeData.shortName}</span>! 👋
           </h1>
           {/* Updated: Frosted glass effect with a darker, purplish background and enhanced shadow */}
-          <p className="text-md md:text-xl lg:text-xl mb-8 border-0 bg-opacity-40 p- rounded-xl shadow-xl backdrop-filter backdrop-blur-sm animate-fade-in-right border border-blue-700">
+          <p className="text-md md:text-xl text-center lg:text-xl mb-8 border-0 bg-opacity-40 p- rounded-xl shadow-xl backdrop-filter backdrop-blur-sm animate-fade-in-right border border-blue-700">
             ⚡ {resumeData.summary}
           </p>
           <a
